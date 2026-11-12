@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>課間筆記 | Study Notes</title>
+<style>
+:root {
+  --green: #153d3b;
+  --mint: #2f7d73;
+  --cream: #f7f6f1;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: #22312f;
+  font-family: Arial, "Microsoft JhengHei", sans-serif;
+  line-height: 1.8;
+}
+header {
+  background: white;
+  border-bottom: 1px solid #e4e8e5;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+.logo {
+  color: var(--green);
+  font-size: 22px;
+  font-weight: bold;
+}
+nav a {
+  margin-left: 16px;
+  color: var(--green);
+  text-decoration: none;
+}
+.hero {
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 85px 20px;
+}
+.hero h1 {
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.4;
+}
+.hero p { color: #d3e5df; }
+.hero a {
+  display: inline-block;
+  background: #d9f0dd;
+  color: var(--green);
+  padding: 12px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 55px 20px;
+}
+h2 { color: var(--green); }
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+button {
+  border: 1px solid #cbdad4;
+  background: white;
+  border-radius: 22px;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+button.active {
+  background: var(--green);
+  color: white;
+}
+input {
+  padding: 10px;
+  border: 1px solid #cbdad4;
+  border-radius: 10px;
+  font-size: 16px;
+  max-width: 100%;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin-top: 25px;
+}
+.card {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid #e5e9e5;
+  box-shadow: 0 5px 20px #153d3b0a;
+}
+.card h3 { color: var(--green); }
+.tag {
+  background: #e3f1ec;
+  color: var(--mint);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+summary {
+  color: var(--mint);
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.details h4 { color: var(--green); }
+.review {
+  background: #edf5ed;
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+.about {
+  background: #e9eee8;
+  border-radius: 20px;
+  padding: 30px;
+}
+footer {
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+[hidden] { display: none !important; }
+@media (max-width: 600px) {
+  header { flex-direction: column; }
+  .hero { padding: 55px 20px; }
+}
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="logo">✳ 課間筆記</div>
+  <nav>
+    <a href="#home">首頁</a>
+    <a href="#notes">學習筆記</a>
+    <a href="#about">關於網站</a>
+  </nav>
+</header>
+
+
+<main>
+<section class="hero" id="home">
+  <h1>每一點進步，<br>都值得被記下來。</h1>
+  <p>把複雜的課堂知識，整理成簡單易懂的筆記。</p>
+  <a href="#notes">開始探索筆記 →</a>
+</section>
+
+
+<section class="container" id="notes">
+  <h2>探索學習筆記</h2>
+  <p>選擇科目，找到適合自己的複習內容。</p>
+
+
+  <div class="tools">
+    <button class="active" data-filter="全部">全部</button>
+    <button data-filter="統計學">統計學</button>
+    <button data-filter="行銷管理">行銷管理</button>
+    <input id="search" type="search" placeholder="搜尋筆記...">
+  </div>
+
+
+  <p id="count" aria-live="polite"></p>
+
+
+  <div class="grid">
+
+
+    <article class="card" data-category="統計學">
+      <span class="tag">統計學 Statistics</span>
+      <h3>平均數、中位數與眾數</h3>
+      <p>學習三種集中趨勢指標，以及它們的差異。</p>
+      <details class="details">
+        <summary>閱讀完整筆記</summary>
+
+
+        <h4>1. 平均數 Mean</h4>
+        <p>將全部數值相加，再除以資料個數。</p>
+        <p>例如：2、4、6 的平均數為 4。</p>
+
+
+        <h4>2. 中位數 Median</h4>
+        <p>將資料由小到大排列後，位於中間的數值。若資料個數為偶數，取中間兩數的平均。</p>
+
+
+        <h4>3. 眾數 Mode</h4>
+        <p>資料中出現次數最多的數值，可能不只一個。</p>
+
+
+        <div class="review">
+          <strong>考前快速整理</strong>
+          <p>平均數容易受到極端值影響；中位數相對不容易受到極端值影響；眾數是最常出現的數值。</p>
+        </div>
+      </details>
+    </article>
+
+
+    <article class="card" data-category="行銷管理">
+      <span class="tag">行銷管理 Marketing</span>
+      <h3>STP 行銷策略</h3>
+      <p>認識市場區隔、目標市場及市場定位。</p>
+      <details class="details">
+        <summary>閱讀完整筆記</summary>
+
+
+        <h4>1. Segmentation 市場區隔</h4>
+        <p>依據消費者的需求、特徵或行為，將市場劃分成不同群體。</p>
+
+
+        <h4>2. Targeting 目標市場選擇</h4>
+        <p>評估不同市場區隔，選擇企業希望服務的客群。</p>
+
+
+        <h4>3. Positioning 市場定位</h4>
+        <p>建立產品在目標顧客心中具有差異化的形象。</p>
+
+
+        <div class="review">
+          <strong>考前快速整理</strong>
+          <p>STP 的順序：市場區隔 → 目標市場選擇 → 市場定位。</p>
+        </div>
+      </details>
+    </article>
+
+
+  </div>
+
+
+  <p id="empty" hidden>找不到符合條件的筆記。</p>
+</section>
+
+
+<section class="container" id="about">
+  <div class="about">
+    <h2>關於課間筆記</h2>
+    <p>這是一個使用 AI 協助開發的大學生學習網站。</p>
+    <p>專案透過 AGENTS.md 建立固定的開發規則，讓 AI 未來能夠遵守一致的設計風格、內容格式與開發流程，持續增加新的學習筆記。</p>
+  </div>
+</section>
+</main>
+
+
+<footer>
+  <p>✳ 課間筆記 | Study Notes</p>
+  <p>讓學習有自己的節奏。</p>
+</footer>
+
+
+<script>
+const cards = document.querySelectorAll(".card");
+const buttons = document.querySelectorAll("[data-filter]");
+const search = document.getElementById("search");
+const counter = document.getElementById("count");
+const empty = document.getElementById("empty");
+let category = "全部";
+
+
+function updateNotes() {
+  const keyword = search.value.trim().toLowerCase();
+  let visible = 0;
+
+
+  cards.forEach(function(card) {
+    const matchCategory =
+      category === "全部" ||
+      card.dataset.category === category;
+    const matchText =
+      card.textContent.toLowerCase().includes(keyword);
+
+
+    card.hidden = !(matchCategory && matchText);
+    if (!card.hidden) visible++;
+  });
+
+
+  counter.textContent = "目前顯示 " + visible + " 篇筆記";
+  empty.hidden = visible !== 0;
+}
+
+
+buttons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    category = button.dataset.filter;
+    buttons.forEach(function(b) {
+      b.classList.remove("active");
+    });
+    button.classList.add("active");
+    updateNotes();
+  });
+});
+
+
+search.addEventListener("input", updateNotes);
+updateNotes();
+</script>
+
+
+</body>
+</html>
